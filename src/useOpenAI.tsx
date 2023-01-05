@@ -11,7 +11,7 @@ interface OpenAIHookResponse {
 }
 
 const useOpenAI = (model: string, prompt: string): OpenAIHookResponse => {
-  const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
+  // const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
   const {
     data,
     error: openAIError,
@@ -22,7 +22,7 @@ const useOpenAI = (model: string, prompt: string): OpenAIHookResponse => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${apiKey}`,
+        Authorization: `Bearer ${'apiKey'}`,
       },
       body: JSON.stringify({
         model,
